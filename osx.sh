@@ -14,6 +14,7 @@ puts () {
 
 if ! brew_loc="$(type -p brew)" || [ -z "$brew_loc" ] ; then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  exec $SHELL
   brew doctor
 else
   puts "updating brew"
